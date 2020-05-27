@@ -37,7 +37,9 @@ let numerator = Math.pow (monthlyInterestRate + 1, periods) * monthlyInterestRat
 
 let denominator = Math.pow(1 + monthlyInterestRate,periods) - 1;
 
-let monthlyPayment = Math.round (principal * (numerator / denominator));
+let payment = (principal*(numerator / denominator));
+
+let monthlyPayment = payment.toFixed(2);
 
 console.log (monthlyPayment);
 
@@ -57,7 +59,8 @@ function mortgageCalculator(){
     let periods = years * 12;
     let numerator = Math.pow (monthlyInterestRate + 1, periods) *monthlyInterestRate;
     let denominator = Math.pow(1 + monthlyInterestRate,periods) - 1;
-    let monthlyPayment = Math.round (principal*(numerator / denominator));
+    let payment = (principal*(numerator / denominator));
+    let monthlyPayment = payment.toFixed(2);
     return (monthlyPayment);
   }
   
@@ -80,7 +83,8 @@ function mortgageCalculator(principal, interestRate, years){
     let periods = years * 12;
     let numerator = Math.pow (monthlyInterestRate + 1, periods) *monthlyInterestRate;
     let denominator = Math.pow(1 + monthlyInterestRate,periods) - 1;
-    let monthlyPayment = Math.round (principal*(numerator / denominator));
+    let payment = (principal*(numerator / denominator));
+    let monthlyPayment = payment.toFixed(2);
     return (monthlyPayment);
   }
   
