@@ -74,7 +74,17 @@ For example,
 mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 */
 
-
+function mortgageCalculator(principal, interestRate, years){
+    let firstName = 'Sharon';
+    let monthlyInterestRate = interestRate / 12;
+    let periods = years * 12;
+    let numerator = Math.pow (monthlyInterestRate + 1, periods) *monthlyInterestRate;
+    let denominator = Math.pow(1 + monthlyInterestRate,periods) - 1;
+    let monthlyPayment = Math.round (principal*(numerator / denominator));
+    return (monthlyPayment);
+  }
+  
+  console.log ( 'Sharon',"your monthly rate is", mortgageCalculator(200000, 0.05, 30))
 
 
 
