@@ -33,11 +33,11 @@ Hint #2: you'll need to use the `math` object for parts of this calculation!
 
 When your math is correct, monthlyRate will equal 1073.64
 */
-let numerator = Math.pow (monthlyInterestRate + 1, periods) *monthlyInterestRate;
+let numerator = Math.pow (monthlyInterestRate + 1, periods) * monthlyInterestRate;
 
 let denominator = Math.pow(1 + monthlyInterestRate,periods) - 1;
 
-let monthlyPayment = Math.round (principal*(numerator / denominator));
+let monthlyPayment = Math.round (principal * (numerator / denominator));
 
 console.log (monthlyPayment);
 
@@ -48,7 +48,21 @@ console.log (monthlyPayment);
 
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
-
+function mortgageCalculator(){
+    let principal = 200000;
+    let interestRate = 0.05;
+    let years = 30;
+    let firstName = 'Sharon';
+    let monthlyInterestRate = interestRate / 12;
+    let periods = years * 12;
+    let numerator = Math.pow (monthlyInterestRate + 1, periods) *monthlyInterestRate;
+    let denominator = Math.pow(1 + monthlyInterestRate,periods) - 1;
+    let monthlyPayment = Math.round (principal*(numerator / denominator));
+    return (monthlyPayment);
+  }
+  
+  console.log ( 'Sharon',"your monthly rate is", mortgageCalculator())
+   
 
 
 
