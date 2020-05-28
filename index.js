@@ -97,7 +97,20 @@ function mortgageCalculator(principal, interestRate, years){
 
 Then, add control flow within your function such that IF creditScore is above 740, interest rate drops by 0.5%, if credit score is below 660, interest rate increases by 0.5% and if credit score is anywhere between 660 and 740 interest rate doesn't change.
 */
+function mortgageCalculator(principal, interest, years, creditScore){
+  if (creditScore > 740) { interest -= .005 };
+  
+  let firstName = 'Sharon';
+  let monthlyInterestRate = interest / 12;
+  let periods = years * 12;
+  let numerator = Math.pow (monthlyInterestRate + 1, periods) *monthlyInterestRate;
+  let denominator = Math.pow(1 + monthlyInterestRate, periods) - 1;
+  let payment = (principal*(numerator / denominator));
+  let monthlyPayment = payment.toFixed(2);
+  return (monthlyPayment);
+}
 
+console.log ( 'Sharon',"your monthly rate is", mortgageCalculator(200000, 0.05, 30, 700))
 
 
 
@@ -117,7 +130,19 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
+//function variableInterestRate (principal, interest, years) {
+ // for (let interest = interest - 0.02; i < interest + 0.02; interest += 0.006)  
+ // let firstName = 'Sharon';
+ // let monthlyInterestRate = interest / 12;
+ // let periods = years * 12;
+ // let numerator = Math.pow (monthlyInterestRate + 1, periods) *monthlyInterestRate;
+ // let denominator = Math.pow(1 + monthlyInterestRate, periods) - 1;
+ // let payment = (principal*(numerator / denominator));
+  //let monthlyPayment = payment.toFixed(2);
+  //return (monthlyPayment);
+//}
 
+ //console.log('Sharon',', with an interest rate of ${interest.toFixed(3)}, your monthly rate is $${monthlyRate}`)
 
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
@@ -134,3 +159,4 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 
 
 /* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
+
