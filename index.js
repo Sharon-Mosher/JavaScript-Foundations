@@ -130,20 +130,21 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
-//function variableInterestRate (principal, interest, years) {
- // for (let interest = interest - 0.02; i < interest + 0.02; interest += 0.006)  
- // let firstName = 'Sharon';
- // let monthlyInterestRate = interest / 12;
- // let periods = years * 12;
- // let numerator = Math.pow (monthlyInterestRate + 1, periods) *monthlyInterestRate;
- // let denominator = Math.pow(1 + monthlyInterestRate, periods) - 1;
- // let payment = (principal*(numerator / denominator));
-  //let monthlyPayment = payment.toFixed(2);
-  //return (monthlyPayment);
-//}
-
- //console.log('Sharon',', with an interest rate of ${interest.toFixed(3)}, your monthly rate is $${monthlyRate}`)
-
+function variableInterestRate (principal, interest, years) {
+  for (let interest = interest - 0.02; i < interest <= 0.06; interest + 0.005) {
+    let firstName = "Sharon";
+    let monthlyInterestRate = interest / 12;
+    let periods = years * 12;
+    let numerator = Math.pow (monthlyInterestRate + 1, periods) *monthlyInterestRate;
+    let denominator = Math.pow(1 + monthlyInterestRate, periods) - 1;
+    let payment = (principal*(numerator / denominator));
+    let monthlyPayment = payment.toFixed(2);
+     
+    console.log( '${firstName},', "with an interest rate of" , interest.toFixed(3), 
+         "your monthly rate is $", monthlyPayment)}
+}
+ 
+ variableInterestRate (200000, 0.04, 30 );
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
 
