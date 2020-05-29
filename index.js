@@ -64,7 +64,7 @@ function mortgageCalculator(){
     return (monthlyPayment);
   }
   
-  console.log ( 'Sharon',"your monthly rate is", mortgageCalculator())
+  console.log ( 'Sharon',"your monthly rate is", monthlyPayment);
    
 
 
@@ -110,7 +110,7 @@ function mortgageCalculator(principal, interest, years, creditScore){
   return (monthlyPayment);
 }
 
-console.log ( 'Sharon',"your monthly rate is", mortgageCalculator(200000, 0.05, 30, 700))
+console.log ( 'Sharon',"your monthly rate is", mortgageCalculator(200000, 0.05, 30, 800))
 
 
 
@@ -131,19 +131,20 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 */
 
 function variableInterestRate (principal, interest, years) {
-  for (let interest = interest - 0.02; i < interest <= 0.06; interest + 0.005) {
+  interest = 0.02;
+  for (let i = 0; i <= 8; i++) {
     let firstName = "Sharon";
     let monthlyInterestRate = interest / 12;
     let periods = years * 12;
     let numerator = Math.pow (monthlyInterestRate + 1, periods) *monthlyInterestRate;
     let denominator = Math.pow(1 + monthlyInterestRate, periods) - 1;
     let payment = (principal*(numerator / denominator));
-    let monthlyPayment = payment.toFixed(2);
-     
-    console.log( '${firstName},', "with an interest rate of" , interest.toFixed(3), 
-         "your monthly rate is $", monthlyPayment)}
+    let monthlyPayment = Math.round(payment);
+     interest += 0.005;
+   console.log( 'Sharon, with an interest rate of '+ interest.toFixed(3), 
+        "your monthly rate is $" + ( monthlyPayment))}
+  return;
 }
- 
  variableInterestRate (200000, 0.04, 30 );
 
 // 🌟🌟🌟 STRETCH 🌟🌟🌟//
